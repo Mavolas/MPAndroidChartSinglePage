@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 过滤条件：设施信息 / 车库信息 -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f9f9f9"
+    android:theme="@style/titlebarstyle"
+    >
+
+    <LinearLayout
+        android:id="@+id/ll1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_alignParentBottom="true"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:focusableInTouchMode="true"
+        >
+
+        <Button
+            android:id="@+id/btnSubmit"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:text="完成"
+            android:background="@color/colorPrimary"
+            android:textColor="@color/white"
+            android:gravity="center"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:paddingLeft="40dp"
+            android:paddingRight="40dp"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            />
+    </LinearLayout>
+
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/ll1"
+        android:layout_alignParentTop="true"
+        android:layout_marginBottom="10dp"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@color/white"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:paddingTop="1dp"
+                android:paddingBottom="1dp"
+                android:focusableInTouchMode="true"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="10dp"
+                    android:text="筛选条件"
+                    android:textColor="#212121"
+                    android:textSize="12sp"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:orientation="horizontal"
+                android:background="#e6e5e5"
+                />
+
+            <!-- region: 类型 -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:text="类型"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:gravity="center_vertical"
+                    android:layout_gravity="center_vertical"
+                    />
+
+                <com.ziruk.viewitems.spinner.MySpinner
+                    android:id="@+id/spinnerFacilityType"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginLeft="90dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:padding="5dp"
+                    android:background="@drawable/mysprinner"
+                    hint = "请选择类型"
+                    layoutid = "@layout/common_mysprinner_body"
+                    />
+            </RelativeLayout>
+            <!-- endregion -->
+
+            <LinearLayout
+                android:id="@+id/ll_filter_date_piker"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:paddingTop="1dp"
+                android:paddingBottom="1dp"
+                android:focusableInTouchMode="true"
+                android:background="#e0e0e0"
+                android:layout_marginTop="10dp"
+                >
+
+                <com.ziruk.viewitems.datepicker.FilterDatePicker
+                    android:id="@+id/dpLastCheckInTimeFrom"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_weight="1"
+                    android:background="@color/white"
+                    android:padding="10dp"
+                    lable="开始时间"
+                    layoutid="@layout/common_filter_datepicker_body"
+                    />
+
+                <com.ziruk.viewitems.datepicker.FilterDatePicker
+                    android:id="@+id/dpLastCheckInTimeTo"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_weight="1"
+                    android:background="@color/white"
+                    android:padding="10dp"
+                    lable="截至时间"
+                    layoutid="@layout/common_filter_datepicker_body"
+                    />
+
+
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

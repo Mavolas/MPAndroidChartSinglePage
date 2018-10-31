@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:padding="4dp"
+	android:layout_centerHorizontal="true"
+    android:layout_gravity="center_vertical"
+    >
+    <TextView
+        android:id="@+id/tvText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentLeft="true"
+        android:textColor="#222222"
+        android:textSize="16sp"
+        android:textColorHint="#bcbcbc"
+        android:text="常数"
+        />
+    
+    <ImageView 
+        android:id="@+id/ivSelector"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="5dp"
+        android:src="@mipmap/ic_selector_down"
+        />
+
+</RelativeLayout>
